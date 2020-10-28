@@ -19,3 +19,9 @@ describe employee_payroll;
 insert into employee_payroll (name, salary, start) values
     -> ('Omkeshwari', 40000, '2020-09-16');
 select *  from employee_payroll;
+
+#uc4
+insert into employee_payroll (name, salary, start) values
+    ->  ('Suruchi', 50000, '2020-05-18'),
+    ->  ('Mital', 60000, '2018-06-24');
+select *  from employee_payroll;
