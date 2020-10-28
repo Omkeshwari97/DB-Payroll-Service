@@ -45,3 +45,12 @@ update employee_payroll
     -> set gender = 'M'
     -> where name = 'Mital';
 select *  from employee_payroll;
+
+#uc7
+select avg(salary) from employee_payroll where gender='F';
+select gender, avg(salary) from employee_payroll group by gender;
+select gender, sum(salary) from employee_payroll group by gender;
+select gender, min(salary) from employee_payroll group by gender;
+select gender, max(salary) from employee_payroll group by gender;
+select count(*) from employee_payroll;
+select gender, count(*) from employee_payroll group by gender;
