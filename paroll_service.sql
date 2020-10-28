@@ -14,3 +14,8 @@ create table employee_payroll(
     -> primary key (id)
     -> );
 describe employee_payroll;
+
+#uc3
+insert into employee_payroll (name, salary, start) values
+    -> ('Omkeshwari', 40000, '2020-09-16');
+select *  from employee_payroll;
