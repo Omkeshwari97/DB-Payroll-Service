@@ -54,3 +54,14 @@ select gender, min(salary) from employee_payroll group by gender;
 select gender, max(salary) from employee_payroll group by gender;
 select count(*) from employee_payroll;
 select gender, count(*) from employee_payroll group by gender;
+
+#uc8
+alter table employee_payroll
+    -> add phone numeric(10) not null after name;
+alter table employee_payroll
+    -> add address varchar(25) not null after phone;
+alter table employee_payroll
+    -> add department varchar(15) not null after address;
+desc employee_payroll;
+alter table employee_payroll
+    -> alter address set default 'TBD';
