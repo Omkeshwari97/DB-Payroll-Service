@@ -65,3 +65,16 @@ alter table employee_payroll
 desc employee_payroll;
 alter table employee_payroll
     -> alter address set default 'TBD';
+
+#uc9
+alter table employee_payroll
+    -> rename column salary to basic_pay;
+alter table employee_payroll
+    -> add deductions double not null after basic_pay;
+alter table employee_payroll
+    -> add taxable_pay double not null after deductions;
+alter table employee_payroll
+    -> add income_tax double not null after taxable_pay;
+alter table employee_payroll
+    -> add net_pay double not null after income_tax;
+desc employee_payroll;
