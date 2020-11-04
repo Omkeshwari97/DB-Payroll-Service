@@ -112,3 +112,12 @@ alter table payroll_details
 
 alter table department
     -> add foreign key(employee_id) references employee_payroll(id);
+
+#uc12
+select avg(salary) from employee_payroll where gender='F';
+select gender, avg(salary) from employee_payroll group by gender;
+select gender, sum(salary) from employee_payroll group by gender;
+select gender, min(salary) from employee_payroll group by gender;
+select gender, max(salary) from employee_payroll group by gender;
+select count(*) from employee_payroll;
+select gender, count(*) from employee_payroll group by gender;
