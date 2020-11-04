@@ -78,3 +78,9 @@ alter table employee_payroll
 alter table employee_payroll
     -> add net_pay double not null after income_tax;
 desc employee_payroll;
+
+#uc10
+insert into employee_payroll
+    -> (name, phone, department, gender, basic_pay, deductions, taxable_pay, income_tax, net_pay, start) values
+    -> ('Suruchi', 9876543211, 'Sales', 'F', 90000, 18000, 72000, 7200, 82800, '2020-11-04');
+select *  from employee_payroll;
