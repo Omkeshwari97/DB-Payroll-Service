@@ -84,3 +84,31 @@ insert into employee_payroll
     -> (name, phone, department, gender, basic_pay, deductions, taxable_pay, income_tax, net_pay, start) values
     -> ('Suruchi', 9876543211, 'Sales', 'F', 90000, 18000, 72000, 7200, 82800, '2020-11-04');
 select *  from employee_payroll;
+
+#uc11
+create table payroll_details(
+    -> payroll_id int not null auto_increment,
+    -> basic_pay double not null,
+    -> deductions double not null,
+    -> taxable_pay double not null,
+    -> income_tax double not null,
+    -> net_pay double not null,
+    -> employee_id int not null,
+    -> primary key (payroll_id)
+    -> );
+
+create table employee_payroll(
+    -> department_id int not null auto_increment,
+    -> department_name varchar(30) not null,
+    -> employee_id int not null,
+    -> primary key (department_id)
+    -> );
+
+alter table employee_payroll
+    -> add column department_id int not null;
+
+alter table payroll_details
+    -> add foreign key(employee_id) references employee_payroll(id);
+
+alter table department
+    -> add foreign key(employee_id) references employee_payroll(id);
